@@ -9,9 +9,14 @@ function Feeling(){
 
     const addFeeling = (event) => {
         event.preventDefault();
-        console.log(feeling);
-        dispatch({type: 'ADD_FEELING', payload: feeling})
-        history.push('/understanding');
+        if (feeling <= 0) {
+            alert('Please enter a valid rating');
+            return;
+        }
+        else {
+            dispatch({type: 'ADD_FEELING', payload: feeling})
+            history.push('/understanding');
+        }
     }
 
     return (
