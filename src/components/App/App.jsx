@@ -7,6 +7,7 @@ import Understanding from '../Understanding/Understanding';
 import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
+import Home from '../Home/Home';
 function App() {
 
   return (
@@ -16,7 +17,8 @@ function App() {
         <h4>Don't forget it!</h4>
       </header>
       <Router>
-        <Route exact path="/" component={Feeling} />
+        <Route exact path="/" component={Home} />
+        <Route exact path="/feeling" component={Feeling} />
         <Route exact path="/understanding" component={Understanding} />
         <Route exact path="/support" component={Support} />
         <Route exact path="/comments" component={Comments} />
