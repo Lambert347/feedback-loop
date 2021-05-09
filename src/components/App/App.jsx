@@ -8,6 +8,7 @@ import Support from '../Support/Support';
 import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Home from '../Home/Home';
+import Success from '../Success/Success';
 function App() {
 
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route exact path="/support" component={Support} />
         <Route exact path="/comments" component={Comments} />
         <Route exact path="/review" component={Review} />
+        <Route exact path="/success" component={Success} />
       </Router>
     </div>
   );
