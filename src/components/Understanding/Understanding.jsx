@@ -10,6 +10,8 @@ function Understanding(){
     const addUnderstanding = (event) => {
         event.preventDefault();
         console.log(understanding);
+        dispatch({type: 'ADD_UNDERSTANDING', payload: {understanding: understanding}})
+        history.push('/support');
     }
     
     return (
@@ -22,3 +24,5 @@ function Understanding(){
         </>
     )
 }
+
+export default Understanding
