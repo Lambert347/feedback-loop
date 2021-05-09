@@ -11,10 +11,10 @@ function Review(){
     
     return (
         <>
-            <p>{reviewFeedback.feeling.feeling}</p>
-            <p>{reviewFeedback.understanding.understanding}</p>
-            <p>{reviewFeedback.support.support}</p>
-            <p>{reviewFeedback.comments.comments}</p>
+            <p>{reviewFeedback.feeling}</p>
+            <p>{reviewFeedback.understanding}</p>
+            <p>{reviewFeedback.support}</p>
+            <p>{reviewFeedback.comments}</p>
 
         </>
     )

@@ -10,7 +10,7 @@ function Comments(){
     const addComments = (event) => {
         event.preventDefault();
         console.log(comments);
-        dispatch({type: 'ADD_COMMENTS', payload: {comments: comments}})
+        dispatch({type: 'ADD_COMMENTS', payload: comments})
         history.push('/review');
     }
 

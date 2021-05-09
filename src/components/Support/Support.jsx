@@ -10,7 +10,7 @@ function Support(){
     const addSupport = (event) => {
         event.preventDefault();
         console.log(support);
-        dispatch({type: 'ADD_SUPPORT', payload: {support: support}})
+        dispatch({type: 'ADD_SUPPORT', payload: support})
         history.push('/comments');
     }
 
