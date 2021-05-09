@@ -9,8 +9,8 @@ function Support(){
 
     const addSupport = (event) => {
         event.preventDefault();
-        if (support <= 0) {
-            alert('Please enter a valid rating');
+        if (support = 0) {
+            alert('Please enter a valid rating between 1 and 10.');
             return;
         }
         else {
@@ -23,7 +23,7 @@ function Support(){
         <>
             <form onSubmit={addSupport}>
                 <h3>How well are you being supported?</h3>
-                <input onChange={(event) => setSupport(event.target.value)} type="number" placeholder="Support" maxLength={10} value={support}/>
+                <input onChange={(event) => setSupport(event.target.value)} type="number" placeholder="Support" max="10" min="0" value={support}/>
                 <button>Next</button>
             </form>
         </>

@@ -10,7 +10,7 @@ function Feeling(){
     const addFeeling = (event) => {
         event.preventDefault();
         if (feeling <= 0) {
-            alert('Please enter a valid rating');
+            alert('Please enter a valid rating between 1 and 10.');
             return;
         }
         else {
@@ -23,7 +23,7 @@ function Feeling(){
         <>
             <form onSubmit={addFeeling}>
                 <h3>How are you feeling today?</h3>
-                <input onChange={(event) => setFeeling(event.target.value)} type="number" placeholder="Rating" maxLength={10} value={feeling}/>
+                <input onChange={(event) => setFeeling(event.target.value)} type="number" placeholder="Rating" max="10" min="0" value={feeling}/>
                 <button>Next</button>
             </form>
             

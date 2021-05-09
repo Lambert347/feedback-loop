@@ -10,7 +10,7 @@ function Understanding(){
     const addUnderstanding = (event) => {
         event.preventDefault();
         if (understanding <= 0) {
-            alert('Please enter a valid rating');
+            alert('Please enter a valid rating between 1 and 10.');
             return;
         }
         else {
@@ -23,7 +23,7 @@ function Understanding(){
         <>
             <form onSubmit={addUnderstanding}>
                 <h3>How well are you understanding the material?</h3>
-                <input onChange={(event) => setUnderstanding(event.target.value)} type="number" placeholder="Understanding" maxLength={10} value={understanding}/>
+                <input onChange={(event) => setUnderstanding(event.target.value)} type="number" placeholder="Understanding" max="10" min="0" value={understanding}/>
                 <button>Next</button>
             </form>
         </>
