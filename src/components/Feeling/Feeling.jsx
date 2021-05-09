@@ -9,7 +9,7 @@ function Feeling(){
 
     const addFeeling = (event) => {
         event.preventDefault();
-        console.log(feeling)
+        console.log(feeling);
         dispatch({type: 'ADD_FEELING', payload: {feeling: feeling}})
         history.push('/understanding');
     }

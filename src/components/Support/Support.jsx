@@ -18,7 +18,7 @@ function Support(){
         <>
             <form onSubmit={addSupport}>
                 <h3>How well are you being support?</h3>
-                <input onChange={(event) => setSupport(event.target.value)} />
+                <input onChange={(event) => setSupport(event.target.value)} type="number" placeholder="Support" maxLength={10} value={support}/>
                 <button>Next</button>
             </form>
         </>
