@@ -16,7 +16,7 @@ app.post('/feedback', (req, res) => {
     console.log(`Adding feedback to database`, newFeedback);
 
     let queryText = `INSERT INTO "feedback" ("feeling", "understanding", "support", "comments")
-                    VALUES ($1, $2, $3, $4)l;`;
+                    VALUES ($1, $2, $3, $4);`;
 
     pool.query(queryText, [newFeedback.feeling, newFeedback.understanding, newFeedback.support, newFeedback.comments])
         .then(result => {

@@ -9,7 +9,8 @@ function Review(){
     const dispatch = useDispatch();
     const history = useHistory();
 
-    const submitReview = () => {
+    const submitReview = (event) => {
+        event.preventDefault();
         axios({
             method: 'POST',
             url: '/feedback',
@@ -19,15 +20,14 @@ function Review(){
                 support: reviewFeedback.support,
                 comments: reviewFeedback.comments,
             }
-            .then(response => {
+        }).then(response => {
                 console.log(response);
                 history.push('/success');
             })
             .catch(error => {
                 console.log('Error with posting to server', error);
                 alert('Could not submit feedback, try again later!');
-            })
-        })
+            });
     }
     
     return (
