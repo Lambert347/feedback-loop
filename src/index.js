@@ -7,9 +7,9 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-//function to get the review objects from the database to be later distributed to the client
-//this honestly may be unnecessary but I don't know yet
+//reducer to handle the storage of information from the client depending on what step they are at in the process
 const reviewReducer = (state = {}, action) => {
+    //switch case to handle the storage of data depending on what action.type from the client. Matches the value brought in with the desired variable based on that action.type.
     switch (action.type) {
         case 'ADD_FEELING':
             return {
@@ -32,10 +32,11 @@ const reviewReducer = (state = {}, action) => {
                 comments: action.payload
             }
     }
+    //if the action.type does not match any of the indicated ones, don't make any changes and just return the state of the reducer.
     return state;
 }
 
-
+//store to handle storing and distributing the information from the above process back to the client when requested by the review page
 const storeInstance = createStore(
     combineReducers({
         reviewReducer,
@@ -43,6 +44,6 @@ const storeInstance = createStore(
     applyMiddleware(logger)
 
 )
-
+//insures that the store is properly used by the App.
 ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
