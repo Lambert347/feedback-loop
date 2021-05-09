@@ -5,10 +5,11 @@ import App from './components/App/App';
 import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import logger from 'redux-logger';
 
 //function to get the review objects from the database to be later distributed to the client
 //this honestly may be unnecessary but I don't know yet
-const reviewObject = (state = [], action) => {
+const reviewReducer = (state = {}, action) => {
     switch (action.type) {
         case 'ADD_FEELING':
             return {
@@ -37,8 +38,9 @@ const reviewObject = (state = [], action) => {
 
 const storeInstance = createStore(
     combineReducers({
-        reviewObject,
-    })
+        reviewReducer,
+    }),
+    applyMiddleware(logger)
 
 )
 
