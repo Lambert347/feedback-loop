@@ -16,9 +16,9 @@ function Feeling(){
 
     return (
         <>
-            <form>
+            <form onSubmit={addFeeling}>
                 <h3>How are you feeling today?</h3>
-                <input onChange={(event) => setFeeling(event.target.value)} type="number" placeholder="Rating" value={feeling}/>
+                <input onChange={(event) => setFeeling(event.target.value)} type="number" placeholder="Rating" maxLength={10} value={feeling}/>
                 <button>Next</button>
             </form>
             
