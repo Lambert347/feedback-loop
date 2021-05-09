@@ -36,8 +36,11 @@ const reviewObject = (state = [], action) => {
 
 
 const storeInstance = createStore(
+    combineReducers({
+        reviewObject,
+    })
 
 )
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
