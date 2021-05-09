@@ -8,6 +8,27 @@ function Review(){
     console.log(reviewFeedback);
     const dispatch = useDispatch();
     const history = useHistory();
+
+    const submitReview = () => {
+        axios({
+            method: 'POST',
+            url: '/feedback',
+            data: {
+                feeling: reviewFeedback.feeling,
+                understanding: reviewFeedback.understanding,
+                support: reviewFeedback.support,
+                comments: reviewFeedback.comments,
+            }
+            .then(response => {
+                console.log(response);
+                history.push('/success');
+            })
+            .catch(error => {
+                console.log('Error with posting to server', error);
+                alert('Could not submit feedback, try again later!');
+            })
+        })
+    }
     
     return (
         <>
