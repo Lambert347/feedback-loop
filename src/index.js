@@ -13,22 +13,22 @@ const reviewObject = (state = [], action) => {
         case 'ADD_FEELING':
             return {
                 ...state,
-                feeling: [...state.feeling, action.feeling]
+                feeling: action.payload
             }
         case 'ADD_UNDERSTANDING':
             return {
                 ...state,
-                understanding: [...state.understanding, action.understanding]
+                understanding: action.payload
             }
         case 'ADD_SUPPORT':
             return {
                 ...state,
-                support: [...state.support, action.support]
+                support: action.payload
             }
         case 'ADD_COMMENTS':
             return {
                 ...state,
-                comments: [...state.comments, action.comments]
+                comments: action.payload
             }
     }
     return state;
