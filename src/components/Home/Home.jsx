@@ -10,9 +10,7 @@ function Home() {
     return (
         <>
             <h2>Hello! Please press start to begin the submission process!</h2>
-            <form onSubmit={movingOn}>
-                <button>Start</button>
-            </form>
+            <button onClick={movingOn}>Start</button>
         </>
     )
 }

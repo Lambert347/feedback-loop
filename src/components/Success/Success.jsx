@@ -9,11 +9,9 @@ function Success(){
 
     return (
         <>
-            <form onSubmit={returnHome}>
-                <h2>Thank you for your feedback!</h2>
-                <h3>Press the return button to return to the home screen to start a new submission.</h3>
-                <button>Return</button>
-            </form>
+            <h2>Thank you for your feedback!</h2>
+            <h3>Press the return button to return to the home screen to start a new submission.</h3>
+            <button onClick={returnHome}>Return</button>
         </>
     )
 }
