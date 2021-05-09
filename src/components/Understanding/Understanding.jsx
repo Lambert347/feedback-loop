@@ -9,9 +9,14 @@ function Understanding(){
 
     const addUnderstanding = (event) => {
         event.preventDefault();
-        console.log(understanding);
-        dispatch({type: 'ADD_UNDERSTANDING', payload: understanding})
-        history.push('/support');
+        if (understanding <= 0) {
+            alert('Please enter a valid rating');
+            return;
+        }
+        else {
+            dispatch({type: 'ADD_UNDERSTANDING', payload: understanding})
+            history.push('/support');
+        }
     }
     
     return (

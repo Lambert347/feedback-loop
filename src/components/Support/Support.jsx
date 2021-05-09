@@ -9,9 +9,14 @@ function Support(){
 
     const addSupport = (event) => {
         event.preventDefault();
-        console.log(support);
-        dispatch({type: 'ADD_SUPPORT', payload: support})
-        history.push('/comments');
+        if (support <= 0) {
+            alert('Please enter a valid rating');
+            return;
+        }
+        else {
+            dispatch({type: 'ADD_SUPPORT', payload: support})
+            history.push('/comments');
+        }
     }
 
     return (
