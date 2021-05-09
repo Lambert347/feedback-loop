@@ -17,7 +17,7 @@ function Understanding(){
     return (
         <>
             <form onSubmit={addUnderstanding}>
-                <h3>How are you understanding the material?</h3>
+                <h3>How well are you understanding the material?</h3>
                 <input onChange={(event) => setUnderstanding(event.target.value)} type="number" placeholder="Understanding" maxLength={10} value={understanding}/>
                 <button>Next</button>
             </form>
