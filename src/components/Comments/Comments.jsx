@@ -22,3 +22,5 @@ function Comments(){
         </form>
     )
 }
+
+export default Comments;
