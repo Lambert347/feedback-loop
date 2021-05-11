@@ -14,7 +14,7 @@ function Support(){
     const addSupport = (event) => {
         event.preventDefault();
         //if the support value remains 0, meaning that the user did not enter a value, they are notified and the function breaks with return
-        if (support = 0) {
+        if (support === 0) {
             alert('Please enter a valid rating between 1 and 10.');
             return;
         //once the user enters a value between 1 and 10, the data is sent to the server with dispatch

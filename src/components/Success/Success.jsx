@@ -1,10 +1,13 @@
 import {useHistory} from 'react-router-dom';
+import {useDispatch} from 'react-redux';
 import react from 'react';
 //function to handle the rendering and functionality of the success component of the app
 function Success(){
     const history = useHistory();
+    const dispatchEvent = useDispatch();
     //when this returnHome function is called, returns the user to the homepage by using history.push
     const returnHome = () => {
+        dispatchEvent({type: 'CLEAR'})
         history.push('/');
     }
     //renders this component to the dom

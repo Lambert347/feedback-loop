@@ -31,6 +31,8 @@ const reviewReducer = (state = {}, action) => {
                 ...state,
                 comments: action.payload
             }
+        case 'CLEAR':
+            return state = {}
     }
     //if the action.type does not match any of the indicated ones, don't make any changes and just return the state of the reducer.
     return state;
